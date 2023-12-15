@@ -3,10 +3,10 @@ kind: Route
 metadata:
   name: hello-java-route
 spec:
-  host: hello-java-dev.apps.cluster-bdjp4.bdjp4.sandbox503.opentlc.com
+  host: hello-java-prod.apps.prod-cluster.sandbox503.opentlc.com
   to:
     kind: Service
-    name: hello-java-service
+    name: prod-hello-java-service
   port:
     targetPort: 8080
   tls:
