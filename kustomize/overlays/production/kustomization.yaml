@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+- ../../base
+
+resources:
+- configmap.yaml
+- route.yaml
+
+namePrefix: prod-
+
+patches:
+- patch: |-
+    - op: add
+      path: /metadata/labels/cluster
+      value: a1
+  target:
+    group: apps
+    kind: Deployment
+    name: hello-java-deployment
+    version: v1

@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hello-java-route
+spec:
+  host: hello-java-dev.apps.cluster-bdjp4.bdjp4.sandbox503.opentlc.com
+  to:
+    kind: Service
+    name: hello-java-service
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+    
